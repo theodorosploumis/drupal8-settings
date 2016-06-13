@@ -2,8 +2,8 @@
 
 // Config sync folder
 $config_directories = array(
-  CONFIG_SYNC_DIRECTORY => __DIR__ . '/../config/sync',
-  CONFIG_STAGING_DIRECTORY => __DIR__ . '/../config/staging',
+  CONFIG_SYNC_DIRECTORY => DRUPAL_ROOT . '/../config/sync',
+  CONFIG_STAGING_DIRECTORY => DRUPAL_ROOT . '/../config/staging',
 );
 
 /**
@@ -26,7 +26,7 @@ $config_directories = array(
  * must exist and be writable by Drupal. This directory must be relative to
  * the Drupal installation directory and be accessible over the web.
  */
-$settings['file_public_path'] = __DIR__ . '/../files';
+$settings['file_public_path'] = DRUPAL_ROOT . '/../files';
 
 /**
  * Private file path:

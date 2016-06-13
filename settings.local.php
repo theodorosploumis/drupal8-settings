@@ -99,4 +99,4 @@ $settings['update_free_access'] = TRUE;
 $settings['container_yamls'][] = __DIR__ . '/development.services.yml';
 
 // Extra settings
-require_once __DIR__ . '/config.php';
+include __DIR__ . '/config.php';

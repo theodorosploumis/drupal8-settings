@@ -12,6 +12,6 @@
 
 $mode = 'local'; // local, live
 
-if (file_exists(__DIR__ . '/../settings/settings.'.$mode.'.php')) {
-  include __DIR__ . '/../settings/settings.'.$mode.'.php';
+if (file_exists(DRUPAL_ROOT . '/SETTINGS_DIR/settings.'.$mode.'.php')) {
+  include DRUPAL_ROOT . '/SETTINGS_DIR/settings.'.$mode.'.php';
 }

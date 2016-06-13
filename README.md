@@ -4,27 +4,47 @@
 
 A collection of Drupal settings related files to use within your settings.php.
 
+This script is making a project structure like this:
+
+```
+PARENT/
+  // Configuration folders
+  config/
+  // Public files
+  files/
+  // Custom settings (this repo)
+  settings/
+  // Drupal files
+  your-drupal-folder/
+
+```
+
+## Requirements
+
+- Apache2
+- (drush)
+- git
+- bash (or sh)
 
 ## Usage
 
+1) Clone this repo out of your Drupal root into folder "settings"
+
 ```
-// On a fresh Drupal installation
-// go to the drupal root folder
-cd [drupal-root]
+git clone git@github.com:theodorosploumis/drupal8-settings.git settings
 
-// Clone this repo
-git clone git@github.com:theodorosploumis/drupal8-settigns.git settings
+```
 
-// Allow the project settings.php file to be editable
-chmod 777 /path/to/settings.php
+2) Initially, run the script. By default you will get a local (dev) environment (no cache, free update access etc)
 
-// Append the settings.local.php file to the site settings.php
-cat settings/add-to-settings.txt >> sites/default/settings.php
+```
+(sudo) bash settings/enable-settings.sh
 
-// Reset the settings.php file permissions
-chmod 444 /path/to/settings.php
+```
 
-// Clear Drupal caches
-drush cr
+3) To enable live/local mode you need to change variable $mode on settings.php. For example run:
+
+```
+(sudo) sed -i "s|\$mode = 'local'|\$mode = 'live'|" PATH/TO/sites/default/settings.php
 
 ```
